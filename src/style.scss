@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$white: hsl(0, 0%, 100%);
+$lightPink: hsl(275, 100%, 97%);
+$darkPink: #ad28eb;
+$grayPurple: hsl(292, 16%, 49%);
+$darkPurple: hsl(292, 42%, 14%);
+
+$weight400: 400;
+$weight600: 600;
+$weight700: 700;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  background-color: $lightPink;
+  background-image: url(./assets/background-pattern-desktop.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .accordion {
+      background-color: $white;
+      width: 60vw;
+      height: fit-content;
+      padding: 4.5vh 4vw;
+      border-radius: 12px;
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 1.5vw;
+        h1 {
+          font-size: 2.75em;
+          font-weight: $weight700;
+        }
+      }
+      .accordion-item {
+        border-bottom: 3px solid $lightPink;
+        padding: 4vh 0;
+
+        .accordion-header {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 0;
+          background: none;
+          padding: 0;
+          h3,
+          img {
+            font-weight: $weight600;
+            cursor: pointer;
+            text-align: left;
+          }
+          h3 {
+            &:hover {
+              color: $darkPink;
+              transition: 0.5s ease;
+            }
+          }
+        }
+        .accordion-content {
+          font-weight: $weight400;
+          padding-top: 0;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+            padding 0.3s ease-out;
+        }
+
+        &.active .accordion-content {
+          max-height: 200px;
+          padding-top: 2.5vh;
+          opacity: 1;
+        }
+      }
+      .accordion-item:nth-of-type(5) {
+        border-bottom: 0;
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    margin: 5vh 0;
+    .attribution {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+
+    main {
+      .accordion {
+        width: 90vw;
+      }
+    }
+  }
+}
+
+@media (max-width:576px){
+  body{
+          background-image: url(./assets/background-pattern-mobile.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+
+  }
+}
