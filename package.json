@@ -1,8 +1,7 @@
 {
   "name": "faq-accordion",
-  "homepage": "https://srinu-vinay-kumar.github.io/FAQ-Accordion/",
-  "private": true,
-  "version": "0.0.0",
+  "homepage": "https://srinu-vinay-kumar.github.io/Frontend-Mentor-Challengess/FAQ-Accordion/",
+   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
